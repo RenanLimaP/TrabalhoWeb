@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/estilo.css" /><title>FastShop</title>
+</head>
+<body>
+
+<nav th:replace="fragments/header :: header"></nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<img class="mt-3 ml-5" width="300px;" height="300px" th:src="@{'/images/'+${produto.imgPath}}"/>
+		</div>
+		<div class="col-md-6 detalhes">
+			<form method="POST" action="/carrinho/add" th:object="${produto}">
+				<input type="hidden" th:value="${produto.id}" name="produtoId">
+				<h2 class="mb-3" style="text-align: center; color: #bc0206; font-weight: 700;" th:text="${produto.nome}"></h2>
+				<p style="text-align: justify;" th:text="${produto.descricao}"></p>
+				<p style="font-size: 1.3em; color: #bc0206; font-weight: bolder;">Por Apenas: <span style="font-size: 40px;" th:text="${produto.preco}"></span></p>
+				
+				<button style="float: right; background: #6f0306; color: #fbfaf8; border: none;" type="submit" class="btn btn-primary botao-descricao" title="Compre agora!">Comprar</button>
+			</form>
+		</div>
+	</div>
+	
+	<h2 class="linha">Informações Úteis</h2>
+	<div class="descricao">
+		<p>Nome: <span th:text="${produto.nome}"></span></p>
+		<p>Fornecedor: <span th:text="${produto.fornecedor}"></span></p>
+	</div>
+</div>
+
+
+
+
+<footer th:replace="fragments/footer :: footer">Footer</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

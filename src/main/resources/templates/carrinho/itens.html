@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/estilo.css" /><title>FastShop</title>
+</head>
+<body>
+
+<nav th:replace="fragments/header :: header"></nav>
+
+<div class="container mt-4">
+        <h2>Meu Carrinho</h2>
+        <div class="row my-auto mx-auto">
+            <table class="table table-bordered table-hover table-md">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Item</th>
+                        <th>Preço</th>
+                        <th>Qtd</th>
+                        <th>Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+	                <tr th:each="item : ${itens}" >
+	                    <td width="650px;">
+	                        <img src="#" class="float-left">
+	                        <h2 th:text="${item.nome}"></h2>
+	                    </td>
+<!-- 	                    <td align="center" th:text="${item.nome}"></td> -->
+	                    
+	<!-- 	                            <input width="50px;" type="number" min="0" id="quantidade" name="quantidade" value="${carrinhoCompras.getQuantidade(item) }"></input> -->
+	<!-- 	                        </td> -->
+	<!-- 	                        <td class="center" align="center">${carrinhoCompras.getTotal(item) }</td> -->
+	<!-- 	                        <td width="80px;"> -->
+	<!--     							<form:form action="${s:mvcUrl('CC#remover').arg(0, item.produto.id).arg(1,item.tipoPreco).build() }" method="post"> -->
+	<!-- 	                            	<input type="image" width="20px" -->
+	<!-- 	                            	src="http:////cdn.shopify.com/s/files/1/0155/7645/t/232/assets/trash.png?15620826580163684070" alt="excluir" title="Remover">  -->
+	<!-- 	                         	</form:form> -->
+	<!--                          	</td> -->
+	                </tr>
+	<!--                     <tr class="thead-dark"> -->
+	<!--                         <td colspan="2"></td> -->
+	<!--                         <td> -->
+	<!--                         </td> -->
+	<!--                         <td align="center"> ${carrinhoCompras.total } </td> -->
+	<!--                         <td></td> -->
+	<!--                     </tr> -->
+                </tbody>
+            </table>
+        </div>
+   </div>
+   
+
+<footer th:replace="fragments/footer :: footer">Footer</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
