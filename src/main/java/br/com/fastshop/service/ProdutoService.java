@@ -31,7 +31,7 @@ public class ProdutoService {
 	}
 	
 	public Produto buscarPorId(Long id) {
-		return produtoRepository.getOne(id);
+		return produtoRepository.findProdutoById(id);
 	}
 
 	public void removerProduto(Long id) {

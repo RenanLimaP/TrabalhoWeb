@@ -4,17 +4,22 @@ import java.math.BigDecimal;
 
 public class CarrinhoItem {
 
-	public Produto produto;
+	private Produto produto;
+	
 	
 	
 	public CarrinhoItem(Produto produto) {
 		this.produto = produto;
 	}
-//
-//	public BigDecimal getTotal(int quantidade) {
-//		return this.produto.getPreco().multiply(new BigDecimal(quantidade));
-//	}
-//	
+
+	public BigDecimal getPreco() {
+		return produto.getPreco();
+	}
+	
+	public BigDecimal getTotal(int quantidade) {
+		return this.produto.getPreco().multiply(new BigDecimal(quantidade));
+	}
+
 	public Produto getProduto() {
 		return produto;
 	}

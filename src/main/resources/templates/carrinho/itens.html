@@ -29,8 +29,10 @@ xmlns:th="http://www.thymeleaf.org">
 	                <tr th:each="item : ${itens}" >
 	                    <td width="650px;">
 	                        <img src="#" class="float-left">
-	                        <h2 th:text="${item.nome}"></h2>
+	                        <h2 th:text="${item.key}"></h2>
 	                    </td>
+	                    <td th:text="${item.value}"></td>
+<!-- 	                    <td th:text="${total}"></td> -->
 <!-- 	                    <td align="center" th:text="${item.nome}"></td> -->
 	                    
 	<!-- 	                            <input width="50px;" type="number" min="0" id="quantidade" name="quantidade" value="${carrinhoCompras.getQuantidade(item) }"></input> -->
